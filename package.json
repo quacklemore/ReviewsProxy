@@ -1,0 +1,33 @@
+{
+  "name": "ReviewsProxy",
+  "version": "1.0.0",
+  "description": "Proxy server for Reviews section of TripAdvisor Page",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quacklemore/ReviewsProxy.git"
+  },
+  "keywords": [],
+  "author": "Taeksu Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quacklemore/ReviewsProxy/issues"
+  },
+  "homepage": "https://github.com/quacklemore/ReviewsProxy#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "docker": "^1.0.0",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "moment": "^2.29.0",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
