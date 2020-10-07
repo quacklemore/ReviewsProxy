@@ -55,18 +55,17 @@ app.post('/api/trips/', (req, res) => {
   });
 });
 
-app.post('/api/pictures/', (req, res) => {
+app.get('/api/pictures/:hotel', (req, res) => {
+  let hotel = req.params.hotel;
   axios({
-    url: 'http://localhost:4000/api/pictures/',
-    method: 'POST',
-    data: {
-      "hotel": req.body.hotel
-    }
+    url: `http://localhost:4000/api/pictures/${hotel}`,
+    method: 'GET'
   })
   .then(result => {
     res.send(result.data);
   })
   .catch(err => {
+    console.log(error);
     console.log(err);
   });
 });

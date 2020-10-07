@@ -1,0 +1,12 @@
+#topContainer {
+  display: flex;
+}
+
+#booking-app {
+  display: inline;
+}
+
+#pictureDisplayApp {
+  display: inline;
+  padding-left: 2em;
+}
