@@ -39,6 +39,7 @@ app.get('/api/trips/:id', (req, res) => {
   });
 });
 
+
 app.post('/api/trips/', (req, res) => {
   axios({
     url: 'http://localhost:4000/api/trips/',
