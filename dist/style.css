@@ -1,6 +1,8 @@
 
 #topContainer {
   display: flex;
+  margin-bottom: 2em;
+  margin-left:25%
 }
 
 #booking-app {
@@ -10,4 +12,18 @@
 #pictureDisplayApp {
   display: inline;
   padding-left: 2em;
+}
+
+/* #aboutApp {
+  position:absolute;
+  left: 50%;
+} */
+
+#ReviewApp {
+  padding-top: 2em;
+}
+
+#bottomContainer {
+  margin-left:25%;
+  height: 2000px;
 }
