@@ -11,6 +11,7 @@ app.listen(port, function() {
   console.log(`listening on port: ${port}`);
 });
 
+//calendar
 app.get('/api/low-days/:id', (req, res) => {
   let lowId = req.params.id;
   axios({
@@ -41,7 +42,7 @@ app.get('/api/trips/:id', (req, res) => {
 
 app.post('/api/trips/', (req, res) => {
   axios({
-    url: 'http://localhost:4000/api/trips/',
+    url: 'http://localhost:4002/api/trips/',
     method: 'POST',
     data: {
       "trip": req.body.trip
@@ -55,6 +56,7 @@ app.post('/api/trips/', (req, res) => {
   });
 });
 
+//pictures
 app.get('/api/pictures/:hotel', (req, res) => {
   let hotel = req.params.hotel;
   axios({
@@ -70,6 +72,7 @@ app.get('/api/pictures/:hotel', (req, res) => {
   });
 });
 
+//About
 app.get('/api/hotel/:hotelId', (req, res) => {
   let hotelId = req.params.hotelId;
   axios({
@@ -84,9 +87,12 @@ app.get('/api/hotel/:hotelId', (req, res) => {
   });
 });
 
-app.get('/reviews', (req, res) => {
+//Reviews
+
+app.get('/hotel/:hotel', (req, res) => {
+  let hotel = req.params.hotel;
   axios({
-    url: 'http://localhost:4003/reviews',
+    url: `http://localhost:4003/hotel/${hotel}`,
     method: 'GET'
   })
   .then(result => {
@@ -96,3 +102,18 @@ app.get('/reviews', (req, res) => {
     console.log(err);
   });
 });
+
+//Redirecting
+app.get('/*', (req, res) => {
+  let fileName = 'index.html'
+  const options = {
+    root: __dirname + '/../dist'
+  }
+  res.sendFile(fileName, options, function(err){
+    if(err) {
+      console.log('error', err);
+    } else {
+      console.log('file sent', fileName);
+    }
+  });
+})
