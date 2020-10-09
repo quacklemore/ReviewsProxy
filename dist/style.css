@@ -1,7 +1,13 @@
-#booking-app{
-  display: inline-block;
+
+#topContainer {
+  display: flex;
+}
+
+#booking-app {
+  display: inline;
 }
 
 #pictureDisplayApp {
-  display:inline-block;
+  display: inline;
+  padding-left: 2em;
 }

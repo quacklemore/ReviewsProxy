@@ -67,6 +67,7 @@ app.get('/api/pictures/:hotel', (req, res) => {
     res.send(result.data);
   })
   .catch(err => {
+    console.log(error);
     console.log(err);
   });
 });
